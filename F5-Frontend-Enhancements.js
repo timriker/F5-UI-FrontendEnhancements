@@ -5,11 +5,13 @@
 // @homepage https://devcentral.f5.com/s/articles/WebUI-Tweaks
 // @author https://loadbalancing.se/about
 // @run-at document-end
-// @version 25
+// @version 26
+// @namespace https://raw.githubusercontent.com/timriker/F5-UI-FrontendEnhancements/master/F5-Frontend-Enhancements.js
 // @updateURL https://raw.githubusercontent.com/timriker/F5-UI-FrontendEnhancements/master/F5-Frontend-Enhancements.js
 // @downloadURL https://raw.githubusercontent.com/timriker/F5-UI-FrontendEnhancements/master/F5-Frontend-Enhancements.js
 // @supportURL https://devcentral.f5.com/s/articles/webui-tweaks-v12-1109
 // @grant none
+// @license MIT
 // @require https://code.jquery.com/jquery-latest.js
 // ==/UserScript==
 /* globals jQuery,$,codeEditor */
