@@ -5,7 +5,7 @@
 // @homepage https://devcentral.f5.com/s/articles/WebUI-Tweaks
 // @author https://loadbalancing.se/about
 // @run-at document-end
-// @version 26
+// @version 27
 // @namespace https://raw.githubusercontent.com/timriker/F5-UI-FrontendEnhancements/master/F5-Frontend-Enhancements.js
 // @updateURL https://raw.githubusercontent.com/timriker/F5-UI-FrontendEnhancements/master/F5-Frontend-Enhancements.js
 // @downloadURL https://raw.githubusercontent.com/timriker/F5-UI-FrontendEnhancements/master/F5-Frontend-Enhancements.js
@@ -307,7 +307,7 @@ var enhancementFunctions = {
                                 <li>Hovering the mouse over an iRule shows the data group list content</li>
                             </ul>`;
         this.enabled = true;
-        this.appliesToVersion = ["11", "12", "13", "14", "15"];
+        this.appliesToVersion = ["11", "12", "13", "14", "15", "16", "17"];
         this.applicable = function(){
             return uriContains("/tmui/Control/jspmap/tmui/locallb/rule/properties.jsp")
             && this.appliesToVersion.indexOf(majorVersion) != -1
@@ -322,7 +322,7 @@ var enhancementFunctions = {
                                 <li>Adds double click to move between sections.</li>
                             </ul>`;
         this.enabled = true;
-        this.appliesToVersion = ["11", "12", "13", "14", "15"];
+        this.appliesToVersion = ["11", "12", "13", "14", "15", "16", "17"];
         this.applicable = function(){
             return uriContains("/tmui/Control/form?__handler=/tmui/locallb/virtual_server/resources&__source=Manage")
                 && this.appliesToVersion.indexOf(majorVersion) != -1
@@ -336,7 +336,7 @@ var enhancementFunctions = {
                                 <li>Adds monitor prefixes when creating pools</li>
                             </ul>`;
         this.enabled = true;
-        this.appliesToVersion = ["11", "12", "13", "14", "15"];
+        this.appliesToVersion = ["11", "12", "13", "14", "15", "16", "17"];
         this.applicable = function(){
             return $("select[name=mon_type]").length > 0
                 && this.appliesToVersion.indexOf(majorVersion) != -1
@@ -350,7 +350,7 @@ var enhancementFunctions = {
                                 <li>Adds monitor prefixes</li>
                             </ul>`;
         this.enabled = true;
-        this.appliesToVersion = ["11", "12", "13", "14", "15"];
+        this.appliesToVersion = ["11", "12", "13", "14", "15", "16", "17"];
         this.applicable = function(){
             return uriContains('/list.jsp')
                 && this.appliesToVersion.indexOf(majorVersion) != -1
@@ -365,7 +365,7 @@ var enhancementFunctions = {
                                 <li>Adds double click functionality</li>
                             </ul>`;
         this.enabled = true;
-        this.appliesToVersion = ["11", "12", "13", "14", "15"];
+        this.appliesToVersion = ["11", "12", "13", "14", "15", "16", "17"];
         this.applicable = function(){
             return uriContains("/tmui/Control/jspmap/tmui/locallb/pool/properties.jsp?name")
                 && this.appliesToVersion.indexOf(majorVersion) != -1
@@ -380,7 +380,7 @@ var enhancementFunctions = {
                                 <li>Adds double click functionality</li>
                             </ul>`;
         this.enabled = true;
-        this.appliesToVersion = ["11", "12", "13", "14", "15"];
+        this.appliesToVersion = ["11", "12", "13", "14", "15", "16", "17"];
         this.applicable = function(){
             return uriContains("/tmui/Control/jspmap/tmui/locallb/pool/create.jsp")
                 && this.appliesToVersion.indexOf(majorVersion) != -1
@@ -394,7 +394,7 @@ var enhancementFunctions = {
                                 <li>Adds monitor tests for HTTP monitors</li>
                             </ul>`;
         this.enabled = true;
-        this.appliesToVersion = ["11", "12", "13", "14", "15"];
+        this.appliesToVersion = ["11", "12", "13", "14", "15", "16", "17"];
         this.applicable = function(){
             return uriContains("/tmui/Control/jspmap/tmui/locallb/pool/member/properties.jsp")
                 && this.appliesToVersion.indexOf(majorVersion) != -1
@@ -409,7 +409,7 @@ var enhancementFunctions = {
                                 <li>Selects a default chain certificate according to the script configuration</li>
                             </ul>`;
         this.enabled = true;
-        this.appliesToVersion = ["11", "12", "13", "14", "15"];
+        this.appliesToVersion = ["11", "12", "13", "14", "15", "16", "17"];
         this.applicable = function(){
             return $('input[name="cert_key_chain_override"]').length > 0
                 && this.appliesToVersion.indexOf(majorVersion) != -1
@@ -423,7 +423,7 @@ var enhancementFunctions = {
                                 <li>Adds a shortcut to the configured default pool</li>
                             </ul>`;
         this.enabled = true;
-        this.appliesToVersion = ["11", "12", "13", "14", "15"];
+        this.appliesToVersion = ["11", "12", "13", "14", "15", "16", "17"];
         this.applicable = function(){
             return uriContains("/tmui/Control/jspmap/tmui/locallb/virtual_server/resources.jsp")
                 && this.appliesToVersion.indexOf(majorVersion) != -1
@@ -437,7 +437,7 @@ var enhancementFunctions = {
                                 <li>Double click to the multiple selection lists</li>
                             </ul>`;
         this.enabled = true;
-        this.appliesToVersion = ["11", "12", "13", "14", "15"];
+        this.appliesToVersion = ["11", "12", "13", "14", "15", "16", "17"];
         this.applicable = function(){
             return uriContains("/tmui/Control/jspmap/tmui/locallb/virtual_server/properties.jsp")
                 && this.appliesToVersion.indexOf(majorVersion) != -1
@@ -451,7 +451,7 @@ var enhancementFunctions = {
                                 <li>Disabled the update button while the key/value fields contains values not in the list to protect from accidentally removing something by mistake.</li>
                             </ul>`;
         this.enabled = true;
-        this.appliesToVersion = ["11", "12", "13", "14", "15"];
+        this.appliesToVersion = ["11", "12", "13", "14", "15", "16", "17"];
         this.applicable = function(){
             return uriContains("/tmui/Control/jspmap/tmui/locallb/datagroup/properties.jsp")
                 && this.appliesToVersion.indexOf(majorVersion) != -1
@@ -465,7 +465,7 @@ var enhancementFunctions = {
                                 <li>Adds the possibility to free-text edit, import, export and merge lists.</li>
                             </ul>`;
         this.enabled = true;
-        this.appliesToVersion = ["11", "12", "13", "14", "15"];
+        this.appliesToVersion = ["11", "12", "13", "14", "15", "16", "17"];
         this.applicable = function(){
             return (uriContains("/tmui/Control/jspmap/tmui/locallb/datagroup/properties.jsp")
                 || uriContains("/tmui/Control/jspmap/tmui/locallb/datagroup/create.jsp")
@@ -481,7 +481,7 @@ var enhancementFunctions = {
                                 <li>Automatically selects a parent profile according to the script configuration</li>
                             </ul>`;
         this.enabled = true;
-        this.appliesToVersion = ["11", "12", "13", "14", "15"];
+        this.appliesToVersion = ["11", "12", "13", "14", "15", "16", "17"];
         this.applicable = function(){
             return uriContains("/tmui/Control/jspmap/tmui/locallb/profile/clientssl/create.jsp")
                 && this.appliesToVersion.indexOf(majorVersion) != -1
@@ -498,7 +498,7 @@ var enhancementFunctions = {
                             <font color="red">Warning: On <i>very</i> large configurations (~2000 pools) this <i><b>can</b></i> be detrimental to the HTTPD process.
                             <b>This is not a risk for the application delivery itself</b>, but <i>may</i> cause the process to be restarted.</font>`;
         this.enabled = true;
-        this.appliesToVersion = ["11", "12", "13", "14", "15"];
+        this.appliesToVersion = ["11", "12", "13", "14", "15", "16", "17"];
         this.applicable = function(){
             return uriContains("/tmui/Control/jspmap/tmui/locallb/pool/list.jsp")
                 && this.appliesToVersion.indexOf(majorVersion) != -1
@@ -512,7 +512,7 @@ var enhancementFunctions = {
                                 <li>Adds a free text partition filter to ease partition selection</li>
                             </ul>`
         this.enabled = true;
-        this.appliesToVersion = ["11", "12", "13", "14", "15"];
+        this.appliesToVersion = ["11", "12", "13", "14", "15", "16", "17"];
         this.applicable = function(){
             return $(parent.top.document).find("input#partitionFilter").length == 0
                 && this.appliesToVersion.indexOf(majorVersion) != -1
@@ -526,7 +526,7 @@ var enhancementFunctions = {
                                 <li>Allows the user to enable/disable Christmas theme during December</li>
                             </ul>`
         this.enabled = true;
-        this.appliesToVersion = ["11", "12", "13", "14", "15"];
+        this.appliesToVersion = ["11", "12", "13", "14", "15", "16", "17"];
         this.applicable = function(){
             return isItChristmas()
                 && allowChristmas
@@ -541,7 +541,7 @@ var enhancementFunctions = {
                                 <li>Adds a drop down menu with predefined CSR options</li>
                             </ul>`;
         this.enabled = true;
-        this.appliesToVersion = ["11", "12", "13", "14", "15"];
+        this.appliesToVersion = ["11", "12", "13", "14", "15", "16", "17"];
         this.applicable = function(){
             return uriContains("/tmui/Control/jspmap/tmui/locallb/ssl_certificate/create.jsp")
                 && this.appliesToVersion.indexOf(majorVersion) != -1
@@ -555,7 +555,7 @@ var enhancementFunctions = {
                                 <li>Shows pool failures in the pool list</li>
                             </ul>`;
         this.enabled = true;
-        this.appliesToVersion = ["11", "12", "13", "14", "15"];
+        this.appliesToVersion = ["11", "12", "13", "14", "15", "16", "17"];
         this.applicable = function(){
             return uriContains("/tmui/Control/jspmap/tmui/overview/welcome/introduction.jsp")
                 && this.appliesToVersion.indexOf(majorVersion) != -1
@@ -1349,7 +1349,7 @@ function improvePoolCreation(){
             $("#member_address_radio_address").attr("unchecked","");
             $("#member_address_radio_node").attr("checked","");
             $("#member_address_radio_node").click();
-        } else if(["11", "12", "13", "14", "15"].indexOf(majorVersion) != -1){
+        } else if(["11", "12", "13", "14", "15", "16", "17"].indexOf(majorVersion) != -1){
             $("tr#member_address_selection td input").eq(0).attr("unchecked", "");
             $("tr#member_address_selection td input").eq(4).attr("checked", "");
             $("tr#member_address_selection td input").eq(4).click();
