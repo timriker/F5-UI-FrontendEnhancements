@@ -5,7 +5,7 @@
 // @homepage https://devcentral.f5.com/s/articles/WebUI-Tweaks
 // @author https://loadbalancing.se/about
 // @run-at document-end
-// @version 29
+// @version 30
 // @namespace https://raw.githubusercontent.com/timriker/F5-UI-FrontendEnhancements/master/F5-Frontend-Enhancements.js
 // @updateURL https://raw.githubusercontent.com/timriker/F5-UI-FrontendEnhancements/master/F5-Frontend-Enhancements.js
 // @downloadURL https://raw.githubusercontent.com/timriker/F5-UI-FrontendEnhancements/master/F5-Frontend-Enhancements.js
@@ -1087,26 +1087,26 @@ function improveDataGroupListEditing(){
         "use strict";
         //First get the data
         let importListArr = $("textarea.bulkcontent:visible").val().split("\n");
-        let currentListArr = [];
-        $("select:visible").last().find("option").each(function(){
-            currentListArr.push($(this).text().trim())
-        })
         //Create objects from the arrays
         let importObj = createDGListObject(importListArr);
-        let currentObj = createDGListObject(currentListArr);
+        let currentSelect = $("select:visible").last();
         for(let key in importObj){
-            currentObj[key] = importObj[key];
+            currentSelect.find("option").each(function(){
+                let currentKey = $(this).text().trim().split(/\s*:=\s*(.*)/i)[0];
+                if(currentKey === key){
+                    $(this).remove();
+                }
+            });
         }
         let selectList = "";
-        for(let key in currentObj){
-            let value = currentObj[key];
+        for(let key in importObj){
+            let value = importObj[key];
             let optionValue = value === "" ? key : (key + "\\x0a" + value);
             let optionText = value === "" ? key : (key + " := " + value);
             selectList += "<option value=\"" + optionValue + "\" selected>"
                 + optionText + "</option>";
         }
-        $("select:visible").last().find("option").remove();
-        $("select:visible").last().append(selectList);
+        currentSelect.append(selectList);
         $("input#bulkReplace").prop("disabled", false);
         $("input#bulkEdit").prop("disabled", false);
         $("input#update").prop("disabled", false);
