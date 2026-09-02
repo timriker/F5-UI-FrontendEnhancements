@@ -5,7 +5,7 @@
 // @homepage https://devcentral.f5.com/s/articles/WebUI-Tweaks
 // @author https://loadbalancing.se/about
 // @run-at document-end
-// @version 28
+// @version 29
 // @namespace https://raw.githubusercontent.com/timriker/F5-UI-FrontendEnhancements/master/F5-Frontend-Enhancements.js
 // @updateURL https://raw.githubusercontent.com/timriker/F5-UI-FrontendEnhancements/master/F5-Frontend-Enhancements.js
 // @downloadURL https://raw.githubusercontent.com/timriker/F5-UI-FrontendEnhancements/master/F5-Frontend-Enhancements.js
@@ -1094,16 +1094,18 @@ function improveDataGroupListEditing(){
         //Create objects from the arrays
         let importObj = createDGListObject(importListArr);
         let currentObj = createDGListObject(currentListArr);
-        let selectList = "";
         for(let key in importObj){
-            let value = importObj[key];
+            currentObj[key] = importObj[key];
+        }
+        let selectList = "";
+        for(let key in currentObj){
+            let value = currentObj[key];
             let optionValue = value === "" ? key : (key + "\\x0a" + value);
             let optionText = value === "" ? key : (key + " := " + value);
-            if(!(key in currentObj)){
-                selectList += "<option value=\"" + optionValue + "\" selected>"
-                    + optionText + "</option>";
-            }
+            selectList += "<option value=\"" + optionValue + "\" selected>"
+                + optionText + "</option>";
         }
+        $("select:visible").last().find("option").remove();
         $("select:visible").last().append(selectList);
         $("input#bulkReplace").prop("disabled", false);
         $("input#bulkEdit").prop("disabled", false);
